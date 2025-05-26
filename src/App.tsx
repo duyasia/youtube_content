@@ -1,13 +1,8 @@
-import React from 'react';
-import Dashboard from './Dashboard';
-import PasswordProtection from './components/PasswordProtection';
+import React from "react";
+import Dashboard from "./Dashboard";
 
 function App() {
-  return (
-    <PasswordProtection>
-      <Dashboard />
-    </PasswordProtection>
-  );
+  return <Dashboard />;
 }
 
 export default App;

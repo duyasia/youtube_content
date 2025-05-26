@@ -1,15 +1,14 @@
 # AI Content Generator Web App
 
-Ứng dụng web tạo nội dung từ video Youtube, sử dụng n8n làm backend, layout Bento, hỗ trợ tuỳ chỉnh tone, webhook, log chi tiết và nhiều tính năng UI/UX đồng bộ theo phong cách YouTube.
+Ứng dụng web tạo nội dung từ video Youtube, sử dụng n8n làm backend, layout Bento, hỗ trợ tuỳ chỉnh tone, webhook động, log chi tiết và nhiều tính năng UI/UX đồng bộ theo phong cách YouTube.
 
 ## Tính năng nổi bật
 
-- **Giao diện Bento layout**: Header, Content Input, Custom Tone, Generated Content, Request Log, nút Generate bố trí khoa học, hiện đại.
-- **Custom Tone**: Tuỳ chỉnh tone cho AI bằng mẫu văn bản riêng, icon Feather màu trắng nổi bật.
-- **Webhook động**: Hỗ trợ nhập webhook tuỳ chọn hoặc dùng mặc định từ biến môi trường.
+- **Đăng nhập bảo mật bằng Firebase (email/password)**: Chỉ người dùng được cấp tài khoản mới sử dụng được app.
+- **Custom Tone**: Tuỳ chỉnh tone cho AI bằng mẫu văn bản riêng.
+- **Webhook động**: Hỗ trợ nhập webhook tuỳ chọn, lưu localStorage.
 - **Log chi tiết**: Hiển thị thời gian, loại request, trạng thái với icon và màu sắc nổi bật (thành công: xanh lá, lỗi: đỏ YouTube).
-- **Đồng bộ màu sắc**: Chủ đạo #ff0034 (đỏ YouTube), icon, border, nền, padding, bo góc đồng bộ.
-- **Responsive, đẹp, hiện đại**: Sử dụng React, Tailwind CSS, tối ưu trải nghiệm người dùng.
+- **Responsive, đẹp, hiện đại**: Giao diện Bento layout. Sử dụng React, Tailwind CSS, tối ưu trải nghiệm người dùng.
 
 ## Yêu cầu hệ thống
 
@@ -21,8 +20,8 @@
 ### 1. Clone dự án
 
 ```bash
-git clone <link-repo-của-bạn>
-cd <tên-thư-mục-dự-án>
+git clone https://github.com/duyasia/youtube-content.git
+cd youtube-content
 ```
 
 ### 2. Cài đặt dependencies
@@ -33,24 +32,27 @@ npm install
 yarn install
 ```
 
-### 3. Thiết lập biến môi trường
+### 3. Thiết lập biến môi trường Firebase
 
-Tạo file `.env` ở thư mục gốc dự án, thêm biến sau (nếu muốn dùng webhook mặc định và đặt password):
+Tạo file `.env` ở thư mục gốc dự án:
 
-```env
-VITE_DEFAULT_WEBHOOK=https://your-default-webhook-url.com
-VITE_PASSWORD=strongPassword
-```
-
-Hoặc chạy lệnh sau để copy mẫu env:
 ```bash
 cp .env.example .env
 ```
 
-> **Lưu ý:**
+Thêm các biến sau (lấy từ Firebase Console):
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+> **Hướng dẫn lấy các giá trị này:**
 >
-> - Nếu không nhập webhook khi sử dụng app, app sẽ lấy giá trị từ biến môi trường này.
-> - Nếu không có biến môi trường và không nhập webhook, app sẽ báo lỗi và không gửi request.
+> - Vào Firebase Console → Project settings → Your apps → Web app → Copy các giá trị từ `firebaseConfig`.
+> - Không để dấu ngoặc kép quanh giá trị trong file `.env`.
 
 Sau khi chỉnh sửa `.env`, **bạn cần khởi động lại server** để cập nhật biến môi trường.
 
@@ -64,9 +66,16 @@ yarn dev
 
 Mở trình duyệt và truy cập: [http://localhost:5173](http://localhost:5173)
 
+### 5. Tạo tài khoản người dùng
+
+- Vào Firebase Console → Authentication → Users → Add user để tạo tài khoản email/password cho người dùng.
+- Chỉ người có tài khoản mới đăng nhập và sử dụng app.
+
 ## Ảnh giao diện mẫu
 
-> (Bạn có thể chèn ảnh chụp màn hình ở đây)
+![YouTube Content Generation](https://auto.vnrom.net/uploads/post/5trn67psK9C.png)
+
+![YouTube Content Generation](https://auto.vnrom.net/uploads/post/5trn6SQ8dVW.png)
 
 ## Cấu trúc thư mục chính
 
@@ -75,8 +84,14 @@ src/
   components/
     CustomTone.tsx
     ResponseDisplay.tsx
-    ...
+    ContentForm.tsx
+    LogDisplay.tsx
+    Header.tsx
+    SettingsPanel.tsx
   App.tsx
+  Dashboard.tsx
+  AuthContext.tsx
+  LoginPage.tsx
   main.tsx
 .env
 vite.config.ts

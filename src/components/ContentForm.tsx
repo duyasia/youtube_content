@@ -40,10 +40,6 @@ const ContentForm = forwardRef<ContentFormRef, ContentFormProps>(
     const handleFormSubmit = async (e?: React.FormEvent) => {
       if (e) e.preventDefault();
       setError(null);
-      if (!webhookUrl) {
-        setError("Please set a webhook URL in Settings first");
-        return;
-      }
       const trimmedUrl = youtubeUrl.trim();
       if (
         !trimmedUrl.includes("youtube.com") &&
