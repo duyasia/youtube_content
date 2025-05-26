@@ -1,4 +1,4 @@
-# AI Content Generator Web App
+# YouTube Content Generation with n8n
 
 Ứng dụng web tạo nội dung từ video Youtube, sử dụng n8n làm backend, layout Bento, hỗ trợ tuỳ chỉnh tone, webhook động, log chi tiết và nhiều tính năng UI/UX đồng bộ theo phong cách YouTube.
 
@@ -40,9 +40,10 @@ Tạo file `.env` ở thư mục gốc dự án:
 cp .env.example .env
 ```
 
-Thêm các biến sau (lấy từ Firebase Console):
+Thêm các biến sau (lấy từ Firebase Console và webhook n8n):
 
 ```env
+VITE_DEFAULT_WEBHOOK=https://your-default-webhook-url.com
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your_project_id
