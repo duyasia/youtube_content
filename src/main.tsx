@@ -6,21 +6,11 @@ import LoginPage from "./LoginPage";
 import "./index.css";
 
 const ProtectedApp = () => {
-  const { user, loading, logout } = useAuth();
+  const { user, loading } = useAuth();
   if (loading)
     return <div className="text-white p-8">Đang kiểm tra đăng nhập...</div>;
   if (!user) return <LoginPage />;
-  return (
-    <>
-      <App />
-      <button
-        onClick={logout}
-        className="ml-4 px-3 py-1 bg-[#ff0034] text-white rounded"
-      >
-        Đăng xuất
-      </button>
-    </>
-  );
+  return <App />;
 };
 
 createRoot(document.getElementById("root")!).render(

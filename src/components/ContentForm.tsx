@@ -99,7 +99,7 @@ const ContentForm = forwardRef<ContentFormRef, ContentFormProps>(
     }));
 
     return (
-      <div className="bg-[#111111] rounded-lg border border-[#222222] p-6 h-full flex flex-col">
+      <div className="bg-[#111111] rounded-2xl border border-[#222222] p-6 h-full flex flex-col">
         <div className="flex items-center gap-2 mb-6">
           <FileVideo className="h-5 w-5 text-[#ff0034]" />
           <h2 className="text-xl font-semibold text-white">Content Input</h2>
