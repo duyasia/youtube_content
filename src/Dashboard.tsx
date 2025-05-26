@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="max-w-5xl mx-auto p-2 sm:p-4 md:p-6">
+      <div className="mx-auto p-2 sm:p-4 md:p-6 min-w-[1208px] max-w-7xl">
         <div className="flex flex-col gap-4">
           {/* Header */}
           <div className="w-full rounded-2xl border border-[#222222] bg-[#111111] p-4 flex items-center">
@@ -63,12 +63,14 @@ const Dashboard: React.FC = () => {
             </div>
             {/* Custom Tone */}
             <CustomTone value={customTone} onChange={setCustomTone} />
-            {/* Request Log */}
-            <div className="mt-0">
+          </div>
+
+          {/* Hàng dưới: Request Log 30% - Generated Content 70% */}
+          <div className="flex flex-col md:flex-row gap-4 mt-2">
+            <div className="md:w-[30%] w-full">
               <LogDisplay logs={logs} />
             </div>
-            {/* Generated Content */}
-            <div className="mt-0">
+            <div className="md:w-[70%] w-full">
               <ResponseDisplay response={response} isLoading={isLoading} />
             </div>
           </div>
