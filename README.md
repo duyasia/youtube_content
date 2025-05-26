@@ -40,9 +40,10 @@ Tạo file `.env` ở thư mục gốc dự án:
 cp .env.example .env
 ```
 
-Thêm các biến sau (lấy từ Firebase Console):
+Thêm các biến sau (lấy từ Firebase Console và webhook n8n):
 
 ```env
+VITE_DEFAULT_WEBHOOK=https://your-default-webhook-url.com
 VITE_FIREBASE_API_KEY=your_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_project_id.firebaseapp.com
 VITE_FIREBASE_PROJECT_ID=your_project_id
