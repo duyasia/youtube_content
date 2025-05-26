@@ -1,4 +1,4 @@
-# AI Content Generator Web App
+# YouTube Content Generation with n8n
 
 Ứng dụng web tạo nội dung từ video Youtube, sử dụng n8n làm backend, layout Bento, hỗ trợ tuỳ chỉnh tone, webhook động, log chi tiết và nhiều tính năng UI/UX đồng bộ theo phong cách YouTube.
 
