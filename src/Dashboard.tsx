@@ -64,11 +64,11 @@ const Dashboard: React.FC = () => {
             {/* Custom Tone */}
             <CustomTone value={customTone} onChange={setCustomTone} />
             {/* Request Log */}
-            <div className="mt-0 md:mt-4">
+            <div className="mt-0">
               <LogDisplay logs={logs} />
             </div>
             {/* Generated Content */}
-            <div className="mt-0 md:mt-4">
+            <div className="mt-0">
               <ResponseDisplay response={response} isLoading={isLoading} />
             </div>
           </div>
