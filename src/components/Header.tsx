@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Settings, Save } from "lucide-react";
+import { Settings, Save, LogOut } from "lucide-react";
+import { useAuth } from "../AuthContext";
 
 interface HeaderProps {
   webhookUrl: string;
@@ -10,6 +11,7 @@ const Header: React.FC<HeaderProps> = ({ webhookUrl, setWebhookUrl }) => {
   const [showSettings, setShowSettings] = useState(false);
   const [localWebhookUrl, setLocalWebhookUrl] = useState(webhookUrl);
   const [isSaved, setIsSaved] = useState(false);
+  const { logout } = useAuth();
 
   const handleSave = () => {
     setWebhookUrl(localWebhookUrl);
@@ -61,12 +63,22 @@ const Header: React.FC<HeaderProps> = ({ webhookUrl, setWebhookUrl }) => {
             </svg>
           </span>
         </div>
-        <button
-          onClick={() => setShowSettings(!showSettings)}
-          className="p-2 hover:bg-[#1A1A1A] rounded-md transition-colors duration-200"
-        >
-          <Settings className="h-6 w-6 text-[#ff0034] hover:text-white" />
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowSettings(!showSettings)}
+            className="p-2 hover:bg-[#1A1A1A] rounded-md transition-colors duration-200"
+            title="Cài đặt"
+          >
+            <Settings className="h-6 w-6 text-[#ff0034] hover:text-white" />
+          </button>
+          <button
+            onClick={logout}
+            className="p-2 hover:bg-[#1A1A1A] rounded-md transition-colors duration-200"
+            title="Đăng xuất"
+          >
+            <LogOut className="h-6 w-6 text-[#ff0034] hover:text-white" />
+          </button>
+        </div>
         {showSettings && (
           <div className="absolute top-full right-4 mt-2 w-96 bg-[#111111] rounded-lg border border-[#222222] p-6 shadow-xl z-50">
             <div className="space-y-4">
