@@ -54,7 +54,7 @@ const ResponseDisplay: React.FC<ResponseDisplayProps> = ({
 
   if (isLoading) {
     return (
-      <div className="bg-[#111111] rounded-md border border-[#222222] p-6 h-full">
+      <div className="bg-[#111111] rounded-2xl border border-[#222222] p-6 h-full">
         <h2 className="text-xl font-semibold text-white mb-4">
           Generated Content
         </h2>
@@ -68,7 +68,7 @@ const ResponseDisplay: React.FC<ResponseDisplayProps> = ({
   const formattedResponse = response ? formatResponse(response) : "";
 
   return (
-    <div className="bg-[#111111] rounded-md border border-[#222222] p-6 h-full">
+    <div className="bg-[#111111] rounded-2xl border border-[#222222] p-6 h-full">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-semibold text-white">Generated Content</h2>
 
