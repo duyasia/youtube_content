@@ -32,15 +32,15 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="mx-auto p-2 sm:p-4 md:p-6 min-w-[1208px] max-w-7xl">
+      <div className="mx-auto p-2 sm:p-4 md:p-6 max-w-full md:max-w-3xl lg:max-w-7xl lg:min-w-[1208px]">
         <div className="flex flex-col gap-4">
           {/* Header */}
-          <div className="w-full rounded-2xl border border-[#222222] bg-[#111111] p-4 flex items-center">
+          <div className="w-full rounded-2xl border border-[#222222] bg-[#111111] p-2 sm:p-4 flex items-center">
             <Header webhookUrl={webhookUrl} setWebhookUrl={setWebhookUrl} />
           </div>
 
-          {/* Grid cho tablet trở lên */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Các khối chính: dùng flex-col gap-4 cho mobile, md:grid-cols-2 cho tablet trở lên */}
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-4">
             {/* Content Input + Nút Generate */}
             <div className="flex flex-col gap-4">
               <ContentForm
@@ -54,7 +54,7 @@ const Dashboard: React.FC = () => {
               />
               <button
                 onClick={() => formRef.current?.submit()}
-                className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 rounded-2xl text-sm font-medium text-white bg-[#ff0034] hover:bg-[#e6002c] transition-colors duration-200"
+                className="w-full inline-flex justify-center items-center gap-2 px-3 py-2 md:px-4 md:py-3 rounded-2xl text-sm font-medium text-white bg-[#ff0034] hover:bg-[#e6002c] transition-colors duration-200"
                 disabled={isLoading}
               >
                 <Send className="h-4 w-4" />
@@ -66,7 +66,7 @@ const Dashboard: React.FC = () => {
           </div>
 
           {/* Hàng dưới: Request Log 30% - Generated Content 70% */}
-          <div className="flex flex-col md:flex-row gap-4 mt-2">
+          <div className="flex flex-col gap-4 md:flex-row md:gap-4">
             <div className="md:w-[30%] w-full">
               <LogDisplay logs={logs} />
             </div>
