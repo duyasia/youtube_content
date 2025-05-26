@@ -57,18 +57,18 @@ const Dashboard: React.FC = () => {
           <div className="row-start-3 row-end-4 col-start-1 col-end-2 h-[400px] flex flex-col">
             <button
               onClick={() => formRef.current?.submit()}
-              className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 rounded-md text-sm font-medium text-white bg-[#ff0034] hover:bg-[#e6002c] transition-colors duration-200 mb-4"
+              className="w-full inline-flex justify-center items-center gap-2 px-4 py-3 rounded-2xl text-sm font-medium text-white bg-[#ff0034] hover:bg-[#e6002c] transition-colors duration-200 mb-4"
               disabled={isLoading}
             >
               <Send className="h-4 w-4" />
               Generate Content
             </button>
-            <div className="flex-1 h-full bg-[#111111] rounded-lg overflow-auto">
+            <div className="flex-1 h-full bg-[#111111] rounded-2xl overflow-auto">
               <LogDisplay logs={logs} />
             </div>
           </div>
           <div className="row-start-3 row-end-4 col-start-2 col-end-3 h-[400px] flex flex-col">
-            <div className="h-full bg-[#111111] rounded-lg p-6 border border-[#222222]">
+            <div className="h-full bg-[#111111] rounded-2xl p-6 border border-[#222222]">
               <ResponseDisplay response={response} isLoading={isLoading} />
             </div>
           </div>

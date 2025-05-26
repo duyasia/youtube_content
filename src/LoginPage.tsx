@@ -21,7 +21,7 @@ const LoginPage: React.FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-black">
       <form
         onSubmit={handleSubmit}
-        className="bg-[#111] p-8 rounded-lg w-96 shadow-lg flex flex-col gap-4"
+        className="bg-[#111] p-8 rounded-2xl w-96 shadow-lg flex flex-col gap-4"
       >
         <h2 className="text-2xl font-bold text-white mb-2">Đăng nhập</h2>
         <input

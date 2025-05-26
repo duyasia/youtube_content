@@ -15,7 +15,7 @@ interface LogDisplayProps {
 
 const LogDisplay: React.FC<LogDisplayProps> = ({ logs }) => {
   return (
-    <div className="bg-[#111111] rounded-lg border border-[#222222] p-6 h-full overflow-auto">
+    <div className="bg-[#111111] rounded-2xl border border-[#222222] p-6 h-full overflow-auto">
       <div className="flex items-center gap-2 mb-4">
         <History className="h-5 w-5 text-[#ff0034]" />
         <h2 className="text-xl font-semibold text-white">Request Log</h2>
@@ -30,7 +30,7 @@ const LogDisplay: React.FC<LogDisplayProps> = ({ logs }) => {
           {logs.map((log, index) => (
             <div
               key={index}
-              className={`p-4 rounded-lg border flex items-center justify-between ${
+              className={`p-4 rounded-2xl border flex items-center justify-between ${
                 log.status === "success"
                   ? "bg-[#22c55e]/10 border-[#22c55e]/30"
                   : "bg-red-500/5 border-red-500/20"
