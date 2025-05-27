@@ -8,7 +8,7 @@ interface CustomToneProps {
 
 const CustomTone: React.FC<CustomToneProps> = ({ value, onChange }) => {
   return (
-    <div className="bg-[#ff0034]/0 rounded-2xl border border-[#ff0034] p-6 pb-8 h-full flex flex-col">
+    <div className="bg-[#111111] rounded-2xl border border-[#ff0034] p-6 pb-8 h-full flex flex-col">
       <div className="flex items-center gap-2 mb-4">
         <Feather className="h-5 w-5 text-white" />
         <h2 className="text-xl font-semibold text-white">Custom Tone</h2>
