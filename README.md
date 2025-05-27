@@ -74,9 +74,9 @@ Mở trình duyệt và truy cập: [http://localhost:5173](http://localhost:517
 
 ## Ảnh giao diện mẫu
 
-![YouTube Content Generation](https://auto.vnrom.net/uploads/post/5trn67psK9C.png)
+![YouTube Content Generation](https://auto.vnrom.net/uploads/post/5ttea5CeFo1.png)
 
-![YouTube Content Generation](https://auto.vnrom.net/uploads/post/5trn6SQ8dVW.png)
+![YouTube Content Generation](https://auto.vnrom.net/uploads/post/5tteapTkmdQ.png)
 
 ## Cấu trúc thư mục chính
 
