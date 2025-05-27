@@ -8,7 +8,7 @@ interface CustomToneProps {
 
 const CustomTone: React.FC<CustomToneProps> = ({ value, onChange }) => {
   return (
-    <div className="bg-[#ff0034]/90 rounded-2xl border border-[#ff0034] p-6 pb-8 h-full flex flex-col">
+    <div className="bg-[#ff0034]/0 rounded-2xl border border-[#ff0034] p-6 pb-8 h-full flex flex-col">
       <div className="flex items-center gap-2 mb-4">
         <Feather className="h-5 w-5 text-white" />
         <h2 className="text-xl font-semibold text-white">Custom Tone</h2>
@@ -18,7 +18,7 @@ const CustomTone: React.FC<CustomToneProps> = ({ value, onChange }) => {
         default tone will be used.
       </p>
       <textarea
-        className="block w-full rounded-md bg-[#ff0034]/30 border border-[#ff0034] text-white placeholder-white/80 p-3 focus:border-[#ff0034] focus:ring focus:ring-[#ff0034]/20 min-h-[100px] max-h-[160px] overflow-auto resize-y h-full"
+        className="block w-full rounded-md bg-[#ff0034] border border-[#ff0034] text-white placeholder-white/80 p-3 focus:border-[#ff0034] focus:ring focus:ring-[#ff0034]/20 min-h-[100px] max-h-[160px] overflow-auto resize-y h-full"
         placeholder="e.g., Write in a formal and informative style, targeting professionals..."
         value={value}
         onChange={(e) => onChange(e.target.value)}
